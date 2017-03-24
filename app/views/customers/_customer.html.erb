@@ -1,0 +1,27 @@
+<% Customer.all.each do |customer| %>
+<div class="customer">
+  <p>
+    <strong>Full name:</strong>
+    <%= customer.fullname %>
+  </p>
+  <p>
+    <strong>Phone number:</strong>
+    <%= customer.phonenumber %>
+  </p>
+  <p>
+    <strong>Email Address:</strong>
+    <%= customer.emailaddress %>
+  </p>
+
+<% unless image_tag customer.image.url.empty? %>
+ <p>
+  <%= image_tag customer.image.url(:large) %>
+</p>
+<% end %>
+
+  <p>
+    <strong>Notes:</strong>
+    <%= customer.notes %>
+  </p>
+</div>
+<% end %>
