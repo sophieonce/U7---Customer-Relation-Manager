@@ -9,6 +9,17 @@
     <%= customer.phonenumber %>
   </p>
 
+<% if customer.province_id.to_i() > 0 %>
+  <p>
+    <strong>Province:</strong>
+    <%= customer.province.name %>
+  </p>
+<% else %>
+<p>
+  <strong>Province: None</strong>
+</p>
+<% end %>
+
  <% if customer.emailaddress != '' %>
   <p>
     <strong>Email Address:</strong>
